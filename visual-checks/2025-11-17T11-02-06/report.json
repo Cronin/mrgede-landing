@@ -1,0 +1,52 @@
+{
+  "site": "mrgede.com",
+  "timestamp": "2025-11-17T11:02:14.292Z",
+  "status": "success",
+  "screenshots": {
+    "desktop": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-17T11-02-06/desktop.png",
+    "mobile": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-17T11-02-06/mobile.png"
+  },
+  "consoleErrors": [
+    "[warning] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.",
+    "[warning] Image with src \"/images/instagram-profile.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[warning] Image with src \"/images/brands/samesa.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[warning] Image with src \"/images/brands/natah-ubud.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[warning] Image with src \"/images/brands/life-kitchen-dumpglins.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[warning] Image with src \"/images/brands/klay-bar.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[warning] Image with src \"/images/brands/kebab-culture.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[warning] Image with src \"/images/brands/eyerizz.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[warning] Image with src \"/images/brands/buongiorno.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[warning] Image with src \"/images/brands/bright-cafe.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[error] Permissions policy violation: accelerometer is not allowed in this document.",
+    "[warning] The devicemotion events are blocked by permissions policy. See https://github.com/w3c/webappsec-permissions-policy/blob/master/features.md#sensor-features",
+    "[warning] [.WebGL-0x13c00505600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[MOBILE warning] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.",
+    "[MOBILE warning] Image with src \"/images/instagram-profile.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[MOBILE warning] Image with src \"/images/brands/samesa.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[MOBILE warning] Image with src \"/images/brands/natah-ubud.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[MOBILE warning] Image with src \"/images/brands/life-kitchen-dumpglins.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[MOBILE warning] Image with src \"/images/brands/klay-bar.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[MOBILE warning] Image with src \"/images/brands/kebab-culture.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[MOBILE warning] Image with src \"/images/brands/eyerizz.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[MOBILE warning] Image with src \"/images/brands/buongiorno.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[MOBILE warning] Image with src \"/images/brands/bright-cafe.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[MOBILE error] Permissions policy violation: accelerometer is not allowed in this document.",
+    "[MOBILE warning] The devicemotion events are blocked by permissions policy. See https://github.com/w3c/webappsec-permissions-policy/blob/master/features.md#sensor-features",
+    "[MOBILE warning] [.WebGL-0x11c004f2000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+  ],
+  "metrics": {
+    "loadTimeMs": 3595,
+    "statusCode": 200
+  },
+  "viewports": {
+    "desktop": {
+      "width": 1920,
+      "height": 1080
+    },
+    "mobile": {
+      "width": 375,
+      "height": 667,
+      "deviceScaleFactor": 2
+    }
+  }
+}
