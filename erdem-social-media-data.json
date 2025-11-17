@@ -1,0 +1,101 @@
+{
+  "scrapedAt": "2025-11-17T10:16:40.263Z",
+  "profile": {
+    "name": "Erdem (Gede)",
+    "title": "Bali Content Creator",
+    "bio": "Follow for culture shocks & local chaos"
+  },
+  "instagram": {
+    "platform": "Instagram",
+    "username": "thegede",
+    "url": "https://www.instagram.com/thegede",
+    "profileUrl": "https://www.instagram.com/thegede",
+    "stats": {
+      "followers": 96,
+      "following": 96,
+      "posts": 96
+    },
+    "bio": "Bali Content Creator",
+    "fullName": "Gede | Bali Content Creator",
+    "profilePicture": "https://scontent.cdninstagram.com/v/t51.82787-19/557812143_17846300070575836_6535530829839109749_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=108&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=IuBvWcEngvIQ7kNvwGp0CV9&_nc_oc=AdmcD7RRG06a82TORndrZUyvuPbcf8iR3wMx1JkxmIhCxAUxQbHNId3pJIlgxf59rkk&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=oeHduDVNqM_eC5kf6lBsLg&oh=00_Afj39t5NU60_VZ_I-eIQUrplApBvvxo1TWXLFzukHU8iqw&oe=6920CCDC",
+    "engagementRate": "estimated_low",
+    "recentPosts": [
+      {
+        "type": "reel",
+        "postCode": "DQON90jkh6i",
+        "url": "https://www.instagram.com/thegede/reel/DQON90jkh6i/",
+        "embedUrl": "https://www.instagram.com/p/DQON90jkh6i/embed"
+      },
+      {
+        "type": "reel",
+        "postCode": "DQBiqHHk5l5",
+        "url": "https://www.instagram.com/thegede/reel/DQBiqHHk5l5/",
+        "embedUrl": "https://www.instagram.com/p/DQBiqHHk5l5/embed"
+      },
+      {
+        "type": "reel",
+        "postCode": "DP5konXkoUX",
+        "url": "https://www.instagram.com/thegede/reel/DP5konXkoUX/",
+        "embedUrl": "https://www.instagram.com/p/DP5konXkoUX/embed"
+      },
+      {
+        "type": "reel",
+        "postCode": "DRHS790Ehmg",
+        "url": "https://www.instagram.com/thegede/reel/DRHS790Ehmg/",
+        "embedUrl": "https://www.instagram.com/p/DRHS790Ehmg/embed"
+      },
+      {
+        "type": "reel",
+        "postCode": "DRG4PryEpEb",
+        "url": "https://www.instagram.com/thegede/reel/DRG4PryEpEb/",
+        "embedUrl": "https://www.instagram.com/p/DRG4PryEpEb/embed"
+      }
+    ],
+    "embedCode": {
+      "format": "oEmbed",
+      "example": "<blockquote class=\"instagram-media\" data-instgrm-permalink=\"https://www.instagram.com/p/DQON90jkh6i/\" data-instgrm-version=\"14\"></blockquote><script async src=\"//www.instagram.com/embed.js\"></script>",
+      "instructions": "Use Instagram's oEmbed API or embed script for each post"
+    }
+  },
+  "tiktok": {
+    "platform": "TikTok",
+    "username": "sntnli",
+    "url": "https://www.tiktok.com/@sntnli",
+    "profileUrl": "https://www.tiktok.com/@sntnli",
+    "stats": {
+      "followers": 1747,
+      "following": 170,
+      "likes": "117.1K",
+      "videos": null
+    },
+    "bio": "Follow for culture shocks & local chaos 🫰🏻",
+    "nickname": "Gede Bule",
+    "engagementRate": "estimated_moderate",
+    "note": "TikTok videos require manual collection due to CAPTCHA protection. Videos can be accessed at the profile URL.",
+    "recentVideos": [],
+    "embedCode": {
+      "format": "TikTok Embed",
+      "example": "<blockquote class=\"tiktok-embed\" cite=\"https://www.tiktok.com/@sntnli/video/VIDEO_ID\" data-video-id=\"VIDEO_ID\" style=\"max-width: 605px;min-width: 325px;\"><section></section></blockquote><script async src=\"https://www.tiktok.com/embed.js\"></script>",
+      "instructions": "To embed TikTok videos, visit the profile manually, copy video URLs, and use TikTok's embed code generator"
+    }
+  },
+  "summary": {
+    "totalFollowers": 1843,
+    "primaryPlatform": "TikTok",
+    "contentType": "Reels and short-form video",
+    "niche": "Bali lifestyle, culture shocks, local content",
+    "recommendations": [
+      "Instagram has lower follower count (96) but 96 posts - consistent posting",
+      "TikTok is the primary platform with 1747 followers and 117.1K likes - strong engagement",
+      "Content focuses on Bali culture, local experiences, and 'culture shock' moments",
+      "5 recent Instagram reels available for embedding",
+      "TikTok videos should be manually collected for embedding due to anti-bot protection"
+    ]
+  },
+  "nextSteps": [
+    "Manually visit https://www.tiktok.com/@sntnli to select 3-5 top performing videos",
+    "Copy the video URLs and use TikTok's embed feature",
+    "Consider using Instagram's official embed widgets for better integration",
+    "Monitor engagement rates to identify best-performing content types"
+  ]
+}

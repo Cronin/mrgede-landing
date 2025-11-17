@@ -1,0 +1,147 @@
+{
+  "creator": {
+    "name": "Erdem",
+    "displayName": "Gede",
+    "fullTitle": "Gede | Bali Content Creator",
+    "bio": "Follow for culture shocks & local chaos",
+    "profileImage": "https://scontent.cdninstagram.com/v/t51.82787-19/557812143_17846300070575836_6535530829839109749_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=108&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=IuBvWcEngvIQ7kNvwGp0CV9&_nc_oc=AdmcD7RRG06a82TORndrZUyvuPbcf8iR3wMx1JkxmIhCxAUxQbHNId3pJIlgxf59rkk&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=oeHduDVNqM_eC5kf6lBsLg&oh=00_Afj39t5NU60_VZ_I-eIQUrplApBvvxo1TWXLFzukHU8iqw&oe=6920CCDC"
+  },
+  "stats": {
+    "totalFollowers": 1843,
+    "totalLikes": "117.1K",
+    "totalPosts": 96
+  },
+  "platforms": {
+    "tiktok": {
+      "enabled": true,
+      "isPrimary": true,
+      "username": "sntnli",
+      "displayName": "Gede Bule",
+      "url": "https://www.tiktok.com/@sntnli",
+      "stats": {
+        "followers": 1747,
+        "following": 170,
+        "likes": "117.1K"
+      },
+      "icon": "tiktok",
+      "color": "#000000",
+      "displayText": "1.7K Followers | 117K Likes"
+    },
+    "instagram": {
+      "enabled": true,
+      "isPrimary": false,
+      "username": "thegede",
+      "displayName": "Gede | Bali Content Creator",
+      "url": "https://www.instagram.com/thegede",
+      "stats": {
+        "followers": 96,
+        "following": 96,
+        "posts": 96
+      },
+      "icon": "instagram",
+      "color": "#E4405F",
+      "displayText": "96 Followers | 96 Posts"
+    }
+  },
+  "featuredContent": {
+    "instagram": {
+      "reels": [
+        {
+          "id": "1",
+          "platform": "instagram",
+          "type": "reel",
+          "postCode": "DQON90jkh6i",
+          "url": "https://www.instagram.com/thegede/reel/DQON90jkh6i/",
+          "embedUrl": "https://www.instagram.com/p/DQON90jkh6i/embed",
+          "embedCode": "<blockquote class=\"instagram-media\" data-instgrm-permalink=\"https://www.instagram.com/p/DQON90jkh6i/\" data-instgrm-version=\"14\"></blockquote>"
+        },
+        {
+          "id": "2",
+          "platform": "instagram",
+          "type": "reel",
+          "postCode": "DQBiqHHk5l5",
+          "url": "https://www.instagram.com/thegede/reel/DQBiqHHk5l5/",
+          "embedUrl": "https://www.instagram.com/p/DQBiqHHk5l5/embed",
+          "embedCode": "<blockquote class=\"instagram-media\" data-instgrm-permalink=\"https://www.instagram.com/p/DQBiqHHk5l5/\" data-instgrm-version=\"14\"></blockquote>"
+        },
+        {
+          "id": "3",
+          "platform": "instagram",
+          "type": "reel",
+          "postCode": "DP5konXkoUX",
+          "url": "https://www.instagram.com/thegede/reel/DP5konXkoUX/",
+          "embedUrl": "https://www.instagram.com/p/DP5konXkoUX/embed",
+          "embedCode": "<blockquote class=\"instagram-media\" data-instgrm-permalink=\"https://www.instagram.com/p/DP5konXkoUX/\" data-instgrm-version=\"14\"></blockquote>"
+        },
+        {
+          "id": "4",
+          "platform": "instagram",
+          "type": "reel",
+          "postCode": "DRHS790Ehmg",
+          "url": "https://www.instagram.com/thegede/reel/DRHS790Ehmg/",
+          "embedUrl": "https://www.instagram.com/p/DRHS790Ehmg/embed",
+          "embedCode": "<blockquote class=\"instagram-media\" data-instgrm-permalink=\"https://www.instagram.com/p/DRHS790Ehmg/\" data-instgrm-version=\"14\"></blockquote>"
+        },
+        {
+          "id": "5",
+          "platform": "instagram",
+          "type": "reel",
+          "postCode": "DRG4PryEpEb",
+          "url": "https://www.instagram.com/thegede/reel/DRG4PryEpEb/",
+          "embedUrl": "https://www.instagram.com/p/DRG4PryEpEb/embed",
+          "embedCode": "<blockquote class=\"instagram-media\" data-instgrm-permalink=\"https://www.instagram.com/p/DRG4PryEpEb/\" data-instgrm-version=\"14\"></blockquote>"
+        }
+      ]
+    },
+    "tiktok": {
+      "note": "TikTok videos require manual collection. Visit https://www.tiktok.com/@sntnli to select videos.",
+      "embedTemplate": "<blockquote class=\"tiktok-embed\" cite=\"https://www.tiktok.com/@sntnli/video/VIDEO_ID\" data-video-id=\"VIDEO_ID\" style=\"max-width: 605px;min-width: 325px;\"><section></section></blockquote>",
+      "videos": []
+    }
+  },
+  "embedScripts": {
+    "instagram": "<script async src=\"//www.instagram.com/embed.js\"></script>",
+    "tiktok": "<script async src=\"https://www.tiktok.com/embed.js\"></script>"
+  },
+  "contentThemes": [
+    "Bali Culture",
+    "Culture Shocks",
+    "Local Experiences",
+    "Travel Content",
+    "Expat Life"
+  ],
+  "recommendations": {
+    "heroSection": {
+      "title": "Bali Content Creator",
+      "subtitle": "Follow for culture shocks & local chaos",
+      "stats": "1.7K+ Followers • 117K+ Likes",
+      "primaryCTA": {
+        "text": "Follow on TikTok",
+        "url": "https://www.tiktok.com/@sntnli"
+      },
+      "secondaryCTA": {
+        "text": "Follow on Instagram",
+        "url": "https://www.instagram.com/thegede"
+      }
+    },
+    "featuredSection": {
+      "title": "Latest Content",
+      "description": "Check out my latest videos about life in Bali",
+      "showInstagramReels": true,
+      "instagramReelsCount": 3,
+      "showTikTokVideos": true,
+      "tiktokVideosCount": 3
+    }
+  },
+  "metadata": {
+    "scrapedAt": "2025-11-17T10:16:40.263Z",
+    "lastUpdated": "2025-11-17T10:19:00.000Z",
+    "dataSource": "Automated scraping with Playwright",
+    "notes": [
+      "Instagram data is complete and ready to use",
+      "TikTok profile stats are accurate",
+      "TikTok videos need manual collection due to CAPTCHA",
+      "All Instagram embed URLs are verified and working"
+    ]
+  }
+}

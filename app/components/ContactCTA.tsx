@@ -1,154 +1,71 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, Calendar, Sparkles } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
 
 export default function ContactCTA() {
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-900 via-violet-800 to-indigo-900 relative overflow-hidden" id="contact">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 30, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, -30, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-20 bg-white" id="contact">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full mb-8"
-          >
-            <Sparkles className="w-5 h-5 text-yellow-300" />
-            <span className="text-white font-medium">Let&apos;s Create Something Amazing</span>
-          </motion.div>
-
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-            Ready to Elevate Your Brand?
-          </h2>
-          <p className="text-xl text-purple-200 max-w-2xl mx-auto mb-12">
-            Let&apos;s discuss how we can work together to create engaging content
-            that drives results and tells your brand&apos;s unique story.
-          </p>
-        </motion.div>
-
-        {/* Contact options */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <motion.a
-            href="mailto:hello@mrgede.com"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Mail className="w-7 h-7 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">Email Me</h3>
-            <p className="text-purple-200">hello@mrgede.com</p>
-          </motion.a>
-
-          <motion.a
-            href="https://wa.me/1234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-              <MessageCircle className="w-7 h-7 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">WhatsApp</h3>
-            <p className="text-purple-200">Quick & Direct Chat</p>
-          </motion.a>
-
-          <motion.a
-            href="https://calendly.com/erdem"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Calendar className="w-7 h-7 text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-2">Schedule Call</h3>
-            <p className="text-purple-200">Book a Meeting</p>
-          </motion.a>
-        </div>
-
-        {/* Main CTA button */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center"
         >
-          <button className="inline-flex items-center gap-3 bg-white text-purple-900 px-10 py-5 rounded-full font-bold text-lg hover:bg-purple-100 transition-all duration-300 hover:scale-105 shadow-2xl">
-            <Mail className="w-6 h-6" />
-            Start a Collaboration
-          </button>
-        </motion.div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6 tracking-tight">
+            Let&apos;s Work Together
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+            Interested in collaborations? Get in touch and let&apos;s create something amazing.
+          </p>
 
-        {/* Services offered */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
-        >
-          {[
-            '📸 Content Creation',
-            '🎥 Video Production',
-            '📱 Social Media Strategy',
-            '🤝 Brand Partnerships',
-          ].map((service, index) => (
-            <div
-              key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-xl py-4 px-2 text-white font-medium"
+          {/* Contact options */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+            <motion.a
+              href="https://www.instagram.com/thegede"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105"
             >
-              {service}
+              <MessageCircle className="w-5 h-5" />
+              Message on Instagram
+            </motion.a>
+
+            <motion.a
+              href="https://www.tiktok.com/@sntnli"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-3 border-2 border-black text-black px-8 py-4 rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300 hover:scale-105"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+              Follow on TikTok
+            </motion.a>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-gray-200 pt-12">
+            <p className="text-sm text-gray-500 uppercase tracking-wider mb-6">
+              What I Offer
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700">
+              <div>Content Creation</div>
+              <div>Video Production</div>
+              <div>Social Media</div>
+              <div>Brand Partnerships</div>
             </div>
-          ))}
+          </div>
         </motion.div>
       </div>
     </section>
