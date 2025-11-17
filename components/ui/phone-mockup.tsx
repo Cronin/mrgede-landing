@@ -22,12 +22,12 @@ export const PhoneMockup = ({ instagramUrl, tiktokUrl }: PhoneMockupProps) => {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {/* Phone Frame */}
-      <div className="relative w-[280px] h-[570px] md:w-[340px] md:h-[690px] bg-black rounded-[3rem] p-3 shadow-2xl">
-        {/* Notch */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-7 bg-black rounded-b-3xl z-20"></div>
+      <div className="relative w-[280px] h-[570px] md:w-[340px] md:h-[690px] bg-black rounded-[3rem] p-2 shadow-2xl">
+        {/* Dynamic Island */}
+        <div className="absolute top-[6px] left-1/2 transform -translate-x-1/2 w-[100px] h-[30px] bg-black rounded-full z-20 border border-gray-900"></div>
 
         {/* Screen */}
-        <div className="relative w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
+        <div className="relative w-full h-full bg-white rounded-[2.7rem] overflow-hidden">
           <AnimatePresence mode="wait">
             {currentView === 'instagram' ? (
               <motion.div
@@ -71,10 +71,16 @@ export const PhoneMockup = ({ instagramUrl, tiktokUrl }: PhoneMockupProps) => {
           </div>
         </div>
 
-        {/* Side Buttons */}
-        <div className="absolute right-0 top-24 w-1 h-12 bg-gray-800 rounded-l"></div>
-        <div className="absolute right-0 top-44 w-1 h-16 bg-gray-800 rounded-l"></div>
-        <div className="absolute left-0 top-32 w-1 h-8 bg-gray-800 rounded-r"></div>
+        {/* Side Buttons - Realistic iPhone 15 style */}
+        {/* Power Button (right side) */}
+        <div className="absolute right-[-2px] top-[100px] w-[3px] h-[60px] bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 rounded-l-sm"></div>
+
+        {/* Volume Buttons (left side) */}
+        <div className="absolute left-[-2px] top-[90px] w-[3px] h-[35px] bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 rounded-r-sm"></div>
+        <div className="absolute left-[-2px] top-[135px] w-[3px] h-[35px] bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 rounded-r-sm"></div>
+
+        {/* Mute Switch (left side, above volume) */}
+        <div className="absolute left-[-2px] top-[65px] w-[3px] h-[18px] bg-gradient-to-b from-gray-700 via-gray-800 to-gray-700 rounded-r-sm"></div>
       </div>
     </div>
   );
