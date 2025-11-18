@@ -206,7 +206,7 @@ export default function ContentShowcase() {
         </motion.div>
 
         {/* 2 Column Layout for ALL screen sizes - Alternating */}
-        <div className="space-y-16 md:space-y-24">
+        <div className="space-y-8 md:space-y-24">
           {collaborations.map((collab, index) => {
             const isEven = index % 2 === 0;
 
@@ -217,12 +217,12 @@ export default function ContentShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+                className="grid grid-cols-2 gap-4 md:gap-12 items-center"
               >
                 {/* Description Column */}
-                <div className={`flex flex-col gap-6 ${isEven ? 'md:order-1' : 'md:order-2'}`}>
+                <div className={`flex flex-col gap-2 md:gap-6 ${isEven ? 'order-1' : 'order-2'}`}>
                   {/* Brand Logo with dark overlay */}
-                  <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-6 md:p-8 shadow-lg w-full max-w-xs mx-auto md:mx-0">
+                  <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-3 md:p-8 shadow-lg w-full">
                     <Image
                       src={collab.logo}
                       alt={collab.brand}
@@ -233,17 +233,17 @@ export default function ContentShowcase() {
                   </div>
 
                   {/* Description */}
-                  <div className="space-y-4">
-                    <h3 className="text-xl md:text-3xl font-bold text-black">
+                  <div className="space-y-2 md:space-y-4">
+                    <h3 className="text-sm md:text-3xl font-bold text-black leading-tight">
                       {collab.title}
                     </h3>
-                    <div className="text-gray-700 text-sm md:text-lg leading-relaxed">
+                    <div className="text-gray-700 text-[10px] md:text-lg leading-relaxed hidden md:block">
                       <p dangerouslySetInnerHTML={{ __html: collab.description }} />
                     </div>
 
                     {/* Stats */}
                     {collab.stats && (
-                      <div className="flex flex-wrap gap-3 pt-2">
+                      <div className="hidden md:flex flex-wrap gap-3 pt-2">
                         {collab.stats.views && (
                           <div className="bg-black text-white px-4 py-2 rounded-lg font-semibold text-xs md:text-sm">
                             {collab.stats.views} views
@@ -261,7 +261,7 @@ export default function ContentShowcase() {
                       href={collab.videoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-black font-semibold hover:gap-3 transition-all text-sm md:text-base"
+                      className="hidden md:inline-flex items-center gap-2 text-black font-semibold hover:gap-3 transition-all text-sm md:text-base"
                     >
                       View on {collab.platform === 'instagram' ? 'Instagram' : 'TikTok'}
                       <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -272,7 +272,7 @@ export default function ContentShowcase() {
                 </div>
 
                 {/* Video Column */}
-                <div className={`aspect-[9/16] max-h-[500px] md:max-h-[600px] mx-auto w-full max-w-[300px] md:max-w-none ${isEven ? 'md:order-2' : 'md:order-1'}`}>
+                <div className={`aspect-[9/16] max-h-[400px] md:max-h-[600px] w-full ${isEven ? 'order-2' : 'order-1'}`}>
                   <VideoPlayer videoFile={collab.videoFile} />
                 </div>
               </motion.div>
