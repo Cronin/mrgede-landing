@@ -20,10 +20,10 @@ export const metadata: Metadata = {
   },
 };
 
-// GTM Container ID - Replace with actual ID after creating container
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXX';
-// GA4 Measurement ID - Replace with actual ID after creating property
-const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID || 'G-XXXXXXXXX';
+// GTM Container ID
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-G22GX754';
+// GA4 Measurement ID
+const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID || 'G-45VZ93SKB7';
 
 export default function RootLayout({
   children,
