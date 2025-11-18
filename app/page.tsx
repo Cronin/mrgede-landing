@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <HeroScroll />
-      <ContentShowcase />
       <BrandCarousel />
+      <ContentShowcase />
       <ContactCTA />
       <Footer />
     </main>

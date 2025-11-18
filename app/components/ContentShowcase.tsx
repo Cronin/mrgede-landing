@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useRef, useState, useEffect } from 'react';
 
 interface Collaboration {
   id: string;
@@ -25,7 +26,7 @@ const collaborations: Collaboration[] = [
     brand: 'Bright Cafe',
     logo: '/images/brands/bright-cafe.webp',
     title: 'Local Coffee Culture',
-    description: 'Showcased authentic Bali coffee experience, driving 45% increase in local customer visits',
+    description: 'Showcased authentic Bali coffee experience, driving <strong>45% increase</strong> in local customer visits',
     videoUrl: 'https://www.instagram.com/p/DQBiqHHk5l5/',
     videoFile: '/videos/bright-cafe.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
@@ -37,7 +38,7 @@ const collaborations: Collaboration[] = [
     brand: 'SaMesa',
     logo: '/images/brands/samesa.webp',
     title: 'Authentic Dining Experience',
-    description: 'Created viral content highlighting traditional cuisine, resulting in 200+ new reservations',
+    description: 'Created viral content highlighting traditional cuisine, resulting in <strong>200+ new reservations</strong>',
     videoUrl: 'https://www.instagram.com/p/DQEFYX4EzwZ/',
     videoFile: '/videos/samesa.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
@@ -49,7 +50,7 @@ const collaborations: Collaboration[] = [
     brand: 'Life Kitchen Dumpglins',
     logo: '/images/brands/life-kitchen-dumpglins.webp',
     title: 'Food Discovery Campaign',
-    description: 'Viral dumpling review reaching 50K+ viewers, sold out weekend inventory',
+    description: 'Viral dumpling review reaching <strong>50K+ viewers</strong>, sold out weekend inventory',
     videoUrl: 'https://www.instagram.com/p/DP8Wm6EklCt/',
     videoFile: '/videos/life-kitchen.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
@@ -61,7 +62,7 @@ const collaborations: Collaboration[] = [
     brand: 'Natah Ubud',
     logo: '/images/brands/natah-ubud.webp',
     title: 'Cultural Stay Experience',
-    description: 'Showcased unique accommodation features, boosting direct bookings by 60%',
+    description: 'Showcased unique accommodation features, boosting direct bookings by <strong>60%</strong>',
     videoUrl: 'https://www.instagram.com/p/DRB7h9UkiXP/',
     videoFile: '/videos/natah-ubud.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
@@ -73,7 +74,7 @@ const collaborations: Collaboration[] = [
     brand: 'Klay Bar',
     logo: '/images/brands/klay-bar.webp',
     title: 'Nightlife Hotspot Feature',
-    description: 'High-energy content showcasing venue atmosphere, 3x increase in weekend footfall',
+    description: 'High-energy content showcasing venue atmosphere, <strong>3x increase</strong> in weekend footfall',
     videoUrl: 'https://www.instagram.com/reel/DQ9WT4JE5UU/',
     videoFile: '/videos/klay-bar.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
@@ -85,7 +86,7 @@ const collaborations: Collaboration[] = [
     brand: 'Eyerizz',
     logo: '/images/brands/eyerizz.webp',
     title: 'Style & Lifestyle Brand',
-    description: 'Trendsetting content driving brand awareness among target demographic',
+    description: 'Trendsetting content driving <strong>brand awareness</strong> among target demographic',
     videoUrl: 'https://www.instagram.com/reel/DNmt25YRFC2/',
     videoFile: '/videos/eyerizz.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
@@ -97,7 +98,7 @@ const collaborations: Collaboration[] = [
     brand: 'Kebab Culture',
     logo: '/images/brands/kebab-culture.webp',
     title: 'Street Food Viral Hit',
-    description: 'TikTok viral moment featuring late-night kebabs, generated 100K+ views',
+    description: 'TikTok viral moment featuring late-night kebabs, generated <strong>100K+ views</strong>',
     videoUrl: 'https://www.tiktok.com/@sntnli/video/7537949332285164816',
     videoFile: '/videos/kebab-culture.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
@@ -105,6 +106,85 @@ const collaborations: Collaboration[] = [
     stats: { views: '105K', engagement: '22.1%' }
   },
 ];
+
+// Video Player Component with autoplay on scroll
+function VideoPlayer({ videoFile }: { videoFile: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {
+              // Autoplay blocked, user interaction needed
+            });
+            setIsPlaying(true);
+          } else {
+            video.pause();
+            setIsPlaying(false);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  return (
+    <div className="relative w-full h-full bg-black rounded-2xl overflow-hidden">
+      <video
+        ref={videoRef}
+        src={videoFile}
+        className="w-full h-full object-cover"
+        playsInline
+        loop
+        muted
+        preload="metadata"
+      />
+
+      {/* Unmute Button */}
+      <button
+        onClick={toggleMute}
+        className="absolute bottom-6 right-6 z-20 bg-black/80 hover:bg-black text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2"
+      >
+        {isMuted ? (
+          <>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+            </svg>
+            Unmute
+          </>
+        ) : (
+          <>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+            </svg>
+            Mute
+          </>
+        )}
+      </button>
+    </div>
+  );
+}
 
 export default function ContentShowcase() {
   return (
@@ -125,7 +205,8 @@ export default function ContentShowcase() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 2 Column Layout for ALL screen sizes */}
+        <div className="space-y-16">
           {collaborations.map((collab, index) => (
             <motion.div
               key={collab.id}
@@ -133,70 +214,64 @@ export default function ContentShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="grid grid-cols-2 gap-6 md:gap-12 items-center"
             >
-              {/* Video/Image Section */}
-              <div className="relative aspect-[9/16] bg-black overflow-hidden">
-                {/* Native Video Player */}
-                <video
-                  src={collab.videoFile}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  loop
-                />
-
-                {/* Brand Logo Overlay */}
-                <div className="absolute top-4 left-4 z-10 pointer-events-none">
-                  <div className="bg-white rounded-xl p-2 shadow-lg">
-                    <Image
-                      src={collab.logo}
-                      alt={collab.brand}
-                      width={50}
-                      height={50}
-                      className="object-contain"
-                    />
-                  </div>
+              {/* Left Column: Logo + Description */}
+              <div className="flex flex-col gap-6">
+                {/* Brand Logo */}
+                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg w-full max-w-xs">
+                  <Image
+                    src={collab.logo}
+                    alt={collab.brand}
+                    width={200}
+                    height={200}
+                    className="object-contain w-full h-auto"
+                  />
                 </div>
 
-                {/* Stats Overlay */}
-                {collab.stats && (
-                  <div className="absolute bottom-4 right-4 z-10 flex gap-2 pointer-events-none">
-                    {collab.stats.views && (
-                      <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-semibold">
-                        {collab.stats.views} views
-                      </div>
-                    )}
-                    {collab.stats.engagement && (
-                      <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-semibold">
-                        {collab.stats.engagement} engagement
-                      </div>
-                    )}
+                {/* Description */}
+                <div className="space-y-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-black">
+                    {collab.title}
+                  </h3>
+                  <div className="text-gray-700 text-base md:text-lg leading-relaxed">
+                    <p dangerouslySetInnerHTML={{ __html: collab.description }} />
                   </div>
-                )}
+
+                  {/* Stats */}
+                  {collab.stats && (
+                    <div className="flex gap-4 pt-2">
+                      {collab.stats.views && (
+                        <div className="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                          {collab.stats.views} views
+                        </div>
+                      )}
+                      {collab.stats.engagement && (
+                        <div className="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                          {collab.stats.engagement} engagement
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  <a
+                    href={collab.videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-black font-semibold hover:gap-3 transition-all"
+                  >
+                    View on {collab.platform === 'instagram' ? 'Instagram' : 'TikTok'}
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
               </div>
 
-              {/* Info Section */}
-              <a
-                href={collab.videoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block p-6 hover:bg-gray-50 transition-colors"
-              >
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-gray-700 transition-colors">
-                  {collab.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  {collab.description}
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-black">{collab.brand}</span>
-                  <svg className="w-5 h-5 text-gray-400 group-hover:text-black group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </a>
+              {/* Right Column: Video with Autoplay */}
+              <div className="aspect-[9/16] max-h-[600px]">
+                <VideoPlayer videoFile={collab.videoFile} />
+              </div>
             </motion.div>
           ))}
         </div>
