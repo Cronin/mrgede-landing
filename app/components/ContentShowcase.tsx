@@ -10,6 +10,7 @@ interface Collaboration {
   title: string;
   description: string;
   videoUrl: string;
+  videoFile: string;
   thumbnail: string;
   platform: 'instagram' | 'tiktok';
   stats?: {
@@ -26,6 +27,7 @@ const collaborations: Collaboration[] = [
     title: 'Local Coffee Culture',
     description: 'Showcased authentic Bali coffee experience, driving 45% increase in local customer visits',
     videoUrl: 'https://www.instagram.com/p/DQBiqHHk5l5/',
+    videoFile: '/videos/bright-cafe.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
     platform: 'instagram',
     stats: { views: '12K', engagement: '8.5%' }
@@ -37,6 +39,7 @@ const collaborations: Collaboration[] = [
     title: 'Authentic Dining Experience',
     description: 'Created viral content highlighting traditional cuisine, resulting in 200+ new reservations',
     videoUrl: 'https://www.instagram.com/p/DQEFYX4EzwZ/',
+    videoFile: '/videos/samesa.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
     platform: 'instagram',
     stats: { views: '18K', engagement: '12.3%' }
@@ -48,6 +51,7 @@ const collaborations: Collaboration[] = [
     title: 'Food Discovery Campaign',
     description: 'Viral dumpling review reaching 50K+ viewers, sold out weekend inventory',
     videoUrl: 'https://www.instagram.com/p/DP8Wm6EklCt/',
+    videoFile: '/videos/life-kitchen.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
     platform: 'instagram',
     stats: { views: '52K', engagement: '15.7%' }
@@ -59,6 +63,7 @@ const collaborations: Collaboration[] = [
     title: 'Cultural Stay Experience',
     description: 'Showcased unique accommodation features, boosting direct bookings by 60%',
     videoUrl: 'https://www.instagram.com/p/DRB7h9UkiXP/',
+    videoFile: '/videos/natah-ubud.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
     platform: 'instagram',
     stats: { views: '28K', engagement: '11.2%' }
@@ -70,6 +75,7 @@ const collaborations: Collaboration[] = [
     title: 'Nightlife Hotspot Feature',
     description: 'High-energy content showcasing venue atmosphere, 3x increase in weekend footfall',
     videoUrl: 'https://www.instagram.com/reel/DQ9WT4JE5UU/',
+    videoFile: '/videos/klay-bar.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
     platform: 'instagram',
     stats: { views: '35K', engagement: '18.5%' }
@@ -81,6 +87,7 @@ const collaborations: Collaboration[] = [
     title: 'Style & Lifestyle Brand',
     description: 'Trendsetting content driving brand awareness among target demographic',
     videoUrl: 'https://www.instagram.com/reel/DNmt25YRFC2/',
+    videoFile: '/videos/eyerizz.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
     platform: 'instagram',
     stats: { views: '22K', engagement: '9.8%' }
@@ -92,6 +99,7 @@ const collaborations: Collaboration[] = [
     title: 'Street Food Viral Hit',
     description: 'TikTok viral moment featuring late-night kebabs, generated 100K+ views',
     videoUrl: 'https://www.tiktok.com/@sntnli/video/7537949332285164816',
+    videoFile: '/videos/kebab-culture.mp4',
     thumbnail: 'https://scontent.cdninstagram.com/v/t51.29350-15/470959841_18482717076038032_7875049819642881682_n.jpg',
     platform: 'tiktok',
     stats: { views: '105K', engagement: '22.1%' }
@@ -128,26 +136,16 @@ export default function ContentShowcase() {
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               {/* Video/Image Section */}
-              <div className="relative aspect-[9/16] bg-gray-100 overflow-hidden">
-                {/* Embedded Video/Post */}
-                {collab.platform === 'instagram' ? (
-                  <iframe
-                    src={`https://www.instagram.com/p/${collab.id}/embed/captioned`}
-                    className="absolute inset-0 w-full h-full border-0"
-                    frameBorder="0"
-                    scrolling="no"
-                    allowTransparency={true}
-                  />
-                ) : (
-                  <iframe
-                    src={`https://www.tiktok.com/embed/v2/${collab.id}`}
-                    className="absolute inset-0 w-full h-full border-0"
-                    frameBorder="0"
-                    scrolling="no"
-                    allowTransparency={true}
-                    allow="encrypted-media;"
-                  />
-                )}
+              <div className="relative aspect-[9/16] bg-black overflow-hidden">
+                {/* Native Video Player */}
+                <video
+                  src={collab.videoFile}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  loop
+                />
 
                 {/* Brand Logo Overlay */}
                 <div className="absolute top-4 left-4 z-10 pointer-events-none">
@@ -167,12 +165,12 @@ export default function ContentShowcase() {
                   <div className="absolute bottom-4 right-4 z-10 flex gap-2 pointer-events-none">
                     {collab.stats.views && (
                       <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-semibold">
-                        👁 {collab.stats.views}
+                        {collab.stats.views} views
                       </div>
                     )}
                     {collab.stats.engagement && (
                       <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-semibold">
-                        💚 {collab.stats.engagement}
+                        {collab.stats.engagement} engagement
                       </div>
                     )}
                   </div>
