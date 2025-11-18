@@ -125,72 +125,78 @@ export default function ContentShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
+              {/* Video/Image Section */}
+              <div className="relative aspect-[9/16] bg-gray-100 overflow-hidden">
+                {/* Embedded Video/Post */}
+                {collab.platform === 'instagram' ? (
+                  <iframe
+                    src={`https://www.instagram.com/p/${collab.id}/embed/captioned`}
+                    className="absolute inset-0 w-full h-full border-0"
+                    frameBorder="0"
+                    scrolling="no"
+                    allowTransparency={true}
+                  />
+                ) : (
+                  <iframe
+                    src={`https://www.tiktok.com/embed/v2/${collab.id}`}
+                    className="absolute inset-0 w-full h-full border-0"
+                    frameBorder="0"
+                    scrolling="no"
+                    allowTransparency={true}
+                    allow="encrypted-media;"
+                  />
+                )}
+
+                {/* Brand Logo Overlay */}
+                <div className="absolute top-4 left-4 z-10 pointer-events-none">
+                  <div className="bg-white rounded-xl p-2 shadow-lg">
+                    <Image
+                      src={collab.logo}
+                      alt={collab.brand}
+                      width={50}
+                      height={50}
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+
+                {/* Stats Overlay */}
+                {collab.stats && (
+                  <div className="absolute bottom-4 right-4 z-10 flex gap-2 pointer-events-none">
+                    {collab.stats.views && (
+                      <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-semibold">
+                        👁 {collab.stats.views}
+                      </div>
+                    )}
+                    {collab.stats.engagement && (
+                      <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-semibold">
+                        💚 {collab.stats.engagement}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {/* Info Section */}
               <a
                 href={collab.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                className="block p-6 hover:bg-gray-50 transition-colors"
               >
-                {/* Video/Image Section */}
-                <div className="relative aspect-[9/16] bg-gray-100 overflow-hidden">
-                  {/* Thumbnail - using placeholder, you can replace with actual video thumbnail */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z"/>
-                        </svg>
-                      </div>
-                      <p className="text-white font-medium text-sm">View on {collab.platform === 'instagram' ? 'Instagram' : 'TikTok'}</p>
-                    </div>
-                  </div>
-
-                  {/* Brand Logo Overlay */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <div className="bg-white rounded-xl p-2 shadow-lg">
-                      <Image
-                        src={collab.logo}
-                        alt={collab.brand}
-                        width={60}
-                        height={60}
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Stats Overlay */}
-                  {collab.stats && (
-                    <div className="absolute bottom-4 right-4 z-10 flex gap-2">
-                      {collab.stats.views && (
-                        <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-semibold">
-                          👁 {collab.stats.views}
-                        </div>
-                      )}
-                      {collab.stats.engagement && (
-                        <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-semibold">
-                          💚 {collab.stats.engagement}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-
-                {/* Info Section */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-black mb-2 group-hover:text-gray-700 transition-colors">
-                    {collab.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                    {collab.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-black">{collab.brand}</span>
-                    <svg className="w-5 h-5 text-gray-400 group-hover:text-black group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-gray-700 transition-colors">
+                  {collab.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  {collab.description}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-black">{collab.brand}</span>
+                  <svg className="w-5 h-5 text-gray-400 group-hover:text-black group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
               </a>
             </motion.div>
