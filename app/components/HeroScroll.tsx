@@ -10,21 +10,23 @@ function Counter({ end, suffix = '', label, onComplete }: { end: number; suffix?
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const duration = 3000; // 3 seconds max
-    const steps = 60;
-    const increment = end / steps;
-    let current = 0;
+    const duration = 2000; // Exactly 2 seconds
+    const startTime = Date.now();
 
     const timer = setInterval(() => {
-      current += increment;
-      if (current >= end) {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      if (progress >= 1) {
         setCount(end);
         clearInterval(timer);
-        if (onComplete) onComplete();
+        if (onComplete) {
+          setTimeout(() => onComplete(), 50); // Small delay to ensure all finish
+        }
       } else {
-        setCount(Math.floor(current));
+        setCount(Math.floor(end * progress));
       }
-    }, duration / steps);
+    }, 16); // ~60fps
 
     return () => clearInterval(timer);
   }, [end, onComplete]);
