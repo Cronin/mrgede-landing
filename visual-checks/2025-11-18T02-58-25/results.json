@@ -1,0 +1,43 @@
+{
+  "site": "mrgede.com",
+  "timestamp": "2025-11-18T02:58:35.701Z",
+  "status": "success",
+  "screenshots": {
+    "desktop": {
+      "fullPage": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-58-25/desktop-full-page.png",
+      "brandSection": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-58-25/desktop-brand-section.png",
+      "brandSectionScrolled": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-58-25/desktop-brand-section-scrolled.png"
+    },
+    "mobile": {
+      "fullPage": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-58-25/mobile-full-page.png",
+      "brandSection": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-58-25/mobile-brand-section.png",
+      "brandSectionScrolled": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-58-25/mobile-brand-section-scrolled.png"
+    }
+  },
+  "consoleErrors": [],
+  "consoleWarnings": [
+    "[Desktop Warning] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.",
+    "[Desktop Warning] Image with src \"/images/instagram-profile.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[Desktop Warning] Image with src \"/images/brands/samesa.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[Desktop Warning] Image with src \"/images/brands/natah-ubud.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[Desktop Warning] Image with src \"/images/brands/life-kitchen-dumpglins.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[Desktop Warning] Image with src \"/images/brands/klay-bar.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[Desktop Warning] Image with src \"/images/brands/kebab-culture.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[Desktop Warning] Image with src \"/images/brands/eyerizz.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[Desktop Warning] Image with src \"/images/brands/buongiorno.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[Desktop Warning] Image with src \"/images/brands/bright-cafe.webp\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes",
+    "[Mobile Warning] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.",
+    "[Mobile Warning] Image with src \"/images/instagram-profile.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes"
+  ],
+  "metrics": {
+    "loadTimeMs": 2600,
+    "statusCode": 200
+  },
+  "observations": [
+    "Found 7 video elements on desktop",
+    "Found 0 images in brand section on desktop",
+    "Found 14 stats badges on desktop. Sample text: 12K views, 8.5% engagement, 18K views",
+    "Found 7 video elements on mobile",
+    "Found 14 stats badges on mobile. Sample text: 12K views, 8.5% engagement, 18K views"
+  ]
+}

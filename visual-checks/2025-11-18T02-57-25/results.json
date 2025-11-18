@@ -1,0 +1,30 @@
+{
+  "site": "mrgede.com",
+  "timestamp": "2025-11-18T02:57:38.323Z",
+  "status": "success",
+  "screenshots": {
+    "desktop": {
+      "fullPage": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-57-25/desktop-full-page.png",
+      "brandSection": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-57-25/desktop-brand-section.png",
+      "brandSectionScrolled": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-57-25/desktop-brand-section-scrolled.png"
+    },
+    "mobile": {
+      "fullPage": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-57-25/mobile-full-page.png",
+      "brandSection": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-57-25/mobile-brand-section.png",
+      "brandSectionScrolled": "/Users/claudiocronin/websites/sites/mrgede.com/visual-checks/2025-11-18T02-57-25/mobile-brand-section-scrolled.png"
+    }
+  },
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "metrics": {
+    "loadTimeMs": 2386,
+    "statusCode": 200
+  },
+  "observations": [
+    "Found 0 video elements on desktop",
+    "Found 0 images in brand section on desktop",
+    "Found 0 stats badges on desktop. Sample text: ",
+    "Found 0 video elements on mobile",
+    "Found 0 stats badges on mobile. Sample text: "
+  ]
+}

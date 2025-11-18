@@ -10,7 +10,7 @@ function Counter({ end, suffix = '', label, onComplete }: { end: number; suffix?
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const duration = 2000; // 2 seconds
+    const duration = 3000; // 3 seconds max
     const steps = 60;
     const increment = end / steps;
     let current = 0;
@@ -29,10 +29,20 @@ function Counter({ end, suffix = '', label, onComplete }: { end: number; suffix?
     return () => clearInterval(timer);
   }, [end, onComplete]);
 
+  const formatNumber = (num: number) => {
+    if (num >= 1000000) {
+      return `+${(num / 1000000).toFixed(1)}M`;
+    } else if (num >= 1000) {
+      return `+${(num / 1000).toFixed(1)}K`;
+    } else {
+      return `+${num}`;
+    }
+  };
+
   return (
     <div className="text-center" ref={ref}>
       <div className="text-2xl sm:text-3xl font-bold text-black">
-        {count >= 1000000 ? `${(count / 1000000).toFixed(1)}M+` : count >= 1000 ? `${(count / 1000).toFixed(1)}K+` : count}
+        {formatNumber(count)}
       </div>
       <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">{label}</div>
     </div>

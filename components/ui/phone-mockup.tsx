@@ -22,7 +22,7 @@ export const PhoneMockup = ({ instagramUrl, tiktokUrl }: PhoneMockupProps) => {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {/* Phone Frame */}
-      <div className="relative w-[220px] h-[450px] md:w-[340px] md:h-[690px] bg-black rounded-[3rem] p-2 shadow-2xl">
+      <div className="relative w-[280px] h-[570px] md:w-[380px] md:h-[770px] bg-black rounded-[3rem] p-2 shadow-2xl">
         {/* Dynamic Island */}
         <div className="absolute top-[6px] left-1/2 transform -translate-x-1/2 w-[100px] h-[30px] bg-black rounded-full z-20 border border-gray-900"></div>
 

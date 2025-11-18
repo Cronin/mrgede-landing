@@ -205,75 +205,79 @@ export default function ContentShowcase() {
           </p>
         </motion.div>
 
-        {/* 2 Column Layout for ALL screen sizes */}
-        <div className="space-y-16">
-          {collaborations.map((collab, index) => (
-            <motion.div
-              key={collab.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="grid grid-cols-2 gap-6 md:gap-12 items-center"
-            >
-              {/* Left Column: Logo + Description */}
-              <div className="flex flex-col gap-6">
-                {/* Brand Logo */}
-                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg w-full max-w-xs">
-                  <Image
-                    src={collab.logo}
-                    alt={collab.brand}
-                    width={200}
-                    height={200}
-                    className="object-contain w-full h-auto"
-                  />
-                </div>
+        {/* 2 Column Layout for ALL screen sizes - Alternating */}
+        <div className="space-y-16 md:space-y-24">
+          {collaborations.map((collab, index) => {
+            const isEven = index % 2 === 0;
 
-                {/* Description */}
-                <div className="space-y-4">
-                  <h3 className="text-2xl md:text-3xl font-bold text-black">
-                    {collab.title}
-                  </h3>
-                  <div className="text-gray-700 text-base md:text-lg leading-relaxed">
-                    <p dangerouslySetInnerHTML={{ __html: collab.description }} />
+            return (
+              <motion.div
+                key={collab.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+              >
+                {/* Description Column */}
+                <div className={`flex flex-col gap-6 ${isEven ? 'md:order-1' : 'md:order-2'}`}>
+                  {/* Brand Logo with dark overlay */}
+                  <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-6 md:p-8 shadow-lg w-full max-w-xs mx-auto md:mx-0">
+                    <Image
+                      src={collab.logo}
+                      alt={collab.brand}
+                      width={200}
+                      height={200}
+                      className="object-contain w-full h-auto"
+                    />
                   </div>
 
-                  {/* Stats */}
-                  {collab.stats && (
-                    <div className="flex gap-4 pt-2">
-                      {collab.stats.views && (
-                        <div className="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm">
-                          {collab.stats.views} views
-                        </div>
-                      )}
-                      {collab.stats.engagement && (
-                        <div className="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm">
-                          {collab.stats.engagement} engagement
-                        </div>
-                      )}
+                  {/* Description */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl md:text-3xl font-bold text-black">
+                      {collab.title}
+                    </h3>
+                    <div className="text-gray-700 text-sm md:text-lg leading-relaxed">
+                      <p dangerouslySetInnerHTML={{ __html: collab.description }} />
                     </div>
-                  )}
 
-                  <a
-                    href={collab.videoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-black font-semibold hover:gap-3 transition-all"
-                  >
-                    View on {collab.platform === 'instagram' ? 'Instagram' : 'TikTok'}
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
+                    {/* Stats */}
+                    {collab.stats && (
+                      <div className="flex flex-wrap gap-3 pt-2">
+                        {collab.stats.views && (
+                          <div className="bg-black text-white px-4 py-2 rounded-lg font-semibold text-xs md:text-sm">
+                            {collab.stats.views} views
+                          </div>
+                        )}
+                        {collab.stats.engagement && (
+                          <div className="bg-black text-white px-4 py-2 rounded-lg font-semibold text-xs md:text-sm">
+                            {collab.stats.engagement} engagement
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    <a
+                      href={collab.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-black font-semibold hover:gap-3 transition-all text-sm md:text-base"
+                    >
+                      View on {collab.platform === 'instagram' ? 'Instagram' : 'TikTok'}
+                      <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
-              </div>
 
-              {/* Right Column: Video with Autoplay */}
-              <div className="aspect-[9/16] max-h-[600px]">
-                <VideoPlayer videoFile={collab.videoFile} />
-              </div>
-            </motion.div>
-          ))}
+                {/* Video Column */}
+                <div className={`aspect-[9/16] max-h-[500px] md:max-h-[600px] mx-auto w-full max-w-[300px] md:max-w-none ${isEven ? 'md:order-2' : 'md:order-1'}`}>
+                  <VideoPlayer videoFile={collab.videoFile} />
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
         <motion.div
