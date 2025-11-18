@@ -7,9 +7,12 @@ import confetti from 'canvas-confetti';
 // Counter Component with animation
 function Counter({ end, suffix = '', label, onComplete }: { end: number; suffix?: string; label: string; onComplete?: () => void }) {
   const [count, setCount] = useState(0);
+  const hasCompleted = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (hasCompleted.current) return; // Don't restart if already completed
+
     const duration = 2000; // Exactly 2 seconds
     const startTime = Date.now();
 
@@ -20,6 +23,7 @@ function Counter({ end, suffix = '', label, onComplete }: { end: number; suffix?
       if (progress >= 1) {
         setCount(end);
         clearInterval(timer);
+        hasCompleted.current = true; // Mark as completed
         if (onComplete) {
           setTimeout(() => onComplete(), 50); // Small delay to ensure all finish
         }
