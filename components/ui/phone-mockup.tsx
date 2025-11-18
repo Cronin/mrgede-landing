@@ -87,11 +87,35 @@ export const PhoneMockup = ({ instagramUrl, tiktokUrl }: PhoneMockupProps) => {
 };
 
 const InstagramView = ({ url }: { url: string }) => {
+  const handleClick = () => {
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        event: 'instagram_click',
+        button_location: 'hero_phone_mockup',
+        conversion_method: 'instagram',
+        conversion_action: 'profile_view',
+        link_url: url
+      });
+    }
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <div className="w-full h-full bg-white relative">
+    <div
+      className="w-full h-full bg-white relative cursor-pointer"
+      onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          handleClick();
+        }
+      }}
+      aria-label="Visit Instagram Profile"
+    >
       <Image
         src="/images/instagram-profile.png"
-        alt="Instagram Profile"
+        alt="Instagram Profile - @thegede"
         fill
         className="object-cover"
         priority
@@ -101,11 +125,35 @@ const InstagramView = ({ url }: { url: string }) => {
 };
 
 const TikTokView = ({ url }: { url: string }) => {
+  const handleClick = () => {
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        event: 'tiktok_click',
+        button_location: 'hero_phone_mockup',
+        conversion_method: 'tiktok',
+        conversion_action: 'profile_view',
+        link_url: url
+      });
+    }
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <div className="w-full h-full bg-white relative">
+    <div
+      className="w-full h-full bg-white relative cursor-pointer"
+      onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          handleClick();
+        }
+      }}
+      aria-label="Visit TikTok Profile"
+    >
       <Image
         src="/images/tiktok-profile.png"
-        alt="TikTok Profile"
+        alt="TikTok Profile - @sntnli"
         fill
         className="object-cover"
         priority

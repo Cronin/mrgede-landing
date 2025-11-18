@@ -27,6 +27,17 @@ export default function ContactCTA() {
               href="https://www.instagram.com/thegede"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.dataLayer) {
+                  window.dataLayer.push({
+                    event: 'instagram_click',
+                    button_location: 'contact_cta',
+                    conversion_method: 'instagram',
+                    conversion_action: 'message',
+                    link_url: 'https://www.instagram.com/thegede'
+                  });
+                }
+              }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -41,6 +52,17 @@ export default function ContactCTA() {
               href="https://www.tiktok.com/@sntnli"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.dataLayer) {
+                  window.dataLayer.push({
+                    event: 'tiktok_click',
+                    button_location: 'contact_cta',
+                    conversion_method: 'tiktok',
+                    conversion_action: 'follow',
+                    link_url: 'https://www.tiktok.com/@sntnli'
+                  });
+                }
+              }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
